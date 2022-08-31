@@ -6,9 +6,9 @@ class Camera {
         this.up = m4.normalize(m4.cross(this.right, this.forward));
     }
 
-    // Rotates a camera’s view up or down. 
-    // You can tilt up or tilt down. 
-    // This rotates about a camera’s u axis.
+    // Ruota la visuale di una telecamera in alto o in basso.
+    // Puoi inclinare verso l'alto o verso il basso.
+    // Ruota attorno all'asse u di una telecamera.
     tilt(step){
         let rotation = m4.axisRotation(this.right, (step / 2));
         this.forward = m4.transformPoint(rotation, this.forward)
@@ -18,8 +18,8 @@ class Camera {
         this.up = m4.normalize(this.up)
     }
 
-    // Rotates the camera’s view horizontally about the camera’s eye location
-    // You can pan left or pan right.This rotates about a camera’s v axis.
+    // Ruota la visuale della telecamera orizzontalmente rispetto alla posizione dell'occhio della telecamera
+    // È possibile eseguire una panoramica a sinistra o una panoramica a destra. Ruota attorno all'asse v di una telecamera.
     pan(step){
         let rotation = m4.axisRotation(this.up, step);
         this.forward = m4.transformPoint(rotation,this.forward);
@@ -29,9 +29,8 @@ class Camera {
         this.right = m4.normalize(this.right);
     }
 
-    // Tilts a camera sideways while maintaining its location and viewing direction.
-    // You can cant left and cant right.
-    // This is a rotation about a camera’s n axis.
+    // Inclina una telecamera lateralmente mantenendone la posizione e la direzione di visualizzazione.
+    // Questa è una rotazione attorno all'asse n di una telecamera.
     cant(step){
         let rotation = m4.axisRotation(this.forward, (step / 2));
         this.right = m4.transformPoint(rotation, this.right)
@@ -41,47 +40,48 @@ class Camera {
         this.up = m4.normalize(this.up);
     }
 
-    // Moves a camera’s location laterally(left or right) while the camera’s direction of view is unchanged.
-    // You can truck left or truck right.
-    // This is a translation along a camera’s u axis.
+    // Sposta la posizione di una telecamera lateralmente (sinistra o destra) mentre la direzione della visuale della telecamera è invariata.
+    // Puoi spostarti verso sinistra o verso destra.
+    // Questa è una traslazione lungo l'asse u di una telecamera.    
     truck(dist){
         this.position[0] += + (this.right[0] * dist);
         this.position[1] += + (this.right[1] * dist);
         this.position[2] += + (this.right[2] * dist);
     }
 
-    // Elevates or lowers a camera on its stand.
-    // You can pedestal up and pedestal down.
-    // This is a translation along a camera’s v axis.
+    // Alza o abbassa una telecamera sul suo supporto.
+    // Puoi alzare il piedistallo e abbassare il piedistallo.
+    // Questa è una traslazione lungo l'asse v di una telecamera.
     pedestal(dist){
         this.position[0] += (this.up[0] * dist);
         this.position[1] += (this.up[1] * dist);
         this.position[2] += (this.up[2] * dist);
     }
 
-    // Moves a camera closer to, or further from, the location it is looking at.
-    // You can dolly in and dolly out.
-    // This is a translation along a camera’s n axis.
+    // Sposta una telecamera più vicino o più lontano dalla posizione che sta guardando.
+    // Puoi entrare e uscire.
+    // Questa è una traslazione lungo l'asse n di una telecamera.
     dolly(dist){
         this.position[0] += (this.forward[0] * dist);
         this.position[1] += (this.forward[1] * dist);
         this.position[2] += (this.forward[2] * dist);
     }
 
-    // Realign the camera
+    // Ri-allinea la telecamera
     align(){
         this.up=[0,1,0];
         this.forward[1] = 0;
         this.right = m4.normalize(m4.cross(this.forward, this.up));
     }
 
-    // Return the view matrix
+    // Ritorna la viewMatrix
     getViewMatrix(){
         const look = m4.addVectors(this.position, this.forward);
         const cameraMatrix = m4.lookAt(this.position, look, this.up);
         return m4.inverse(cameraMatrix); // ViewMatrix
     };
 
+    // ritorna ad una posizione della telecamera predefinita
     getOriginalPosition(){
         this.up=[0,1,0];
         this.position = [3, 0, 0];
@@ -90,7 +90,7 @@ class Camera {
         // this.up = m4.normalize(m4.cross(this.right, this.forward));
     }
 
-    // Return this.position
+    // Ritorna la posizione della telecamera
     getPosition(){
         return this.position
     }

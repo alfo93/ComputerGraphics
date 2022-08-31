@@ -1,12 +1,13 @@
 class Model {
 	constructor(objName, objSource, objMtl, objPosition, objRotate, gl) {
+
 		this.name = objName;
 		this.obj_source = objSource;
 		this.mtl_source = objMtl;
 		this.position = objPosition;
-		this.mesh = []; // This object stores all the mesh information
-		this.mesh.sourceMesh = this.obj_source; // .sourceMesh is used in load_mesh.js
-		this.mesh.fileMTL = this.mtl_source;
+		this.mesh = []; // Salva l'informazione della mesh
+		this.mesh.sourceMesh = this.obj_source; // .sourceMesh viene usato per caricare la mesh con load_mesh.js
+		this.mesh.fileMTL = this.mtl_source; // viene usato per caricare la texture
 
 		if (objRotate) { // Used for world matrix transform
 			this.rotate = objRotate;

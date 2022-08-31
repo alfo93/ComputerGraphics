@@ -182,11 +182,88 @@
                         </p>
                     </div>
                 </div>
-            </div>
-        </div>
-        <div class="row clearfix">
-            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                <h3>prepareCanvas.js</h3>
+                <div class="row clearfix">
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                        <h3>prepareCanvas.js</h3>
+                        <h4>l'oggetto Canvas</h4>
+                        <p>
+                            Per la creazione del contesto 3D ho scelto di creare il <b>Canvas</b>, che rappresenta la finestra di rendering, come una classe. <br>
+                            La costruzione del modello canvas come oggetto mi ha permesso di utilizzare tutti i vantaggi di una programmazione ad oggetti.<br>
+                            La variabile canvas viene dichiarata nel file main.js, in scope globale, in modo da permettere poi ad ogni modello mesh di accedere a questa variabile. <br>
+                            Il canvas viene inizializzato nella chiamata alla funzione <b>main</b>.<br>
+                            Alla creazione dell'oggetto canvas, il costruttore crea in prima istanza il contesto webgl, e successivamente imposta il viewport, che specifica la trasformazione di x e y dalle coordinate del dispositivo alle coordinate della finestra. <br>
+                            Viene inizializzata una lista di mesh che verrà successivamente riempita ogni qual volta viene istanziato un oggetto Model.<br>
+        
+                            Come ultimo passo viene creato il program chiamando la funzione della libreria di WebGl <b>webglUtils.createProgramInfo</b> che prende come parametri il contesto 3D e gli shader. <br>
+                            <br>
+                            Per gestire correttamente la trasformazione della scena in base al restringimento della finestra, viene chiamata nel main la funzione <b>resizeCanvasToDisplaySize</b><br>
+                            Vengono memorizzate le coordinate width ed height della finestra e si confrontano con quelle del canvas. Se sono diverse, viene chiamata la funzione <b>resizeCanvasToDisplaySize</b> che imposta la dimensione del canvas alla dimensione della finestra. <br>
+                        </p>
+                    </div>
+                </div>
+                <div class="row clearfix">
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                        <h3>Model.js</h3>
+                        <h4>l'oggetto Model</h4>
+                        <p>
+                            Model rappresenta la classe degli oggetti mesh. <br>
+                            La classe Model è costituita da una variabile <b>mesh</b> che contiene l'oggetto mesh. <br>
+                            
+                        </p>
+                    </div>
+                </div>
+                <div class="row clearfix">
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                        <h3>camera.js</h3>
+                        <h4>l'oggetto Camera</h4>
+                        <p>
+                            Come per il canvas e per il modello, anche la camera è stata gestita con l'utilizzo di una classe.<br>
+                            La variabile camera viene dichiarata in uno scope globale così da permettere ad ogni oggetto di accedere a questa variabile. <br>
+                            L'oggetto della classe camera viene istanziato successivamente alla chiamata della funzione <b>main</b>, al quale vengono passati come parametri la posizione, il target ed up.<br>
+                            Il costruttore della classe si occupa di inizializzare i parametri dell'oggetto position, forward, right ed up. <br>
+                            La position è la posizione della camera, mentre forward e right sono gli assi che definiscono la direzione della camera. <br>
+                            L'up è l'asse verticale della camera. <br>
+                            Position viene inizializzato con il parametro <b>position</b> passato all'istanziazione dell'oggetto. <br>
+                            Forward viene calcolata utilizzato la libreria m4 e applicando una normalizzazione alla sottrazione dei vettori target e position. <br>
+                            Right, analogamente, viene calcolata con la libreria m4 e applicando una normalizzazione al prodotto tra vettori right e forward.<br><br>
+                            All'interno della classe sono poi disponibili tutte le funzioni che permettono di modificare la posizione della camera e il suo orientamento <br>
+                            Le funzioni sono:
+                            <ul>
+                                <li>
+                                    tilt: Permette di ruotare la telecamera verso l'alto o verso il basso.
+                                </li>
+                                <li>
+                                    pan: Permette di ruotare la telecamera verso destra o verso sinistra.
+                                </li>
+                                <li>
+                                    cant: Inclina una telecamera lateralmente mantenendone la posizione e direzione di visualizzazione.
+                                </li>
+                                <li>
+                                    truch: Permette di spostare la telecamera lateralmente senza modificare la direzione della visuale
+                                </li>
+                                <li>
+                                    pedestal: Alza o abbassa la telecamera sul suo asse verticale.
+                                </li>
+                                <li>
+                                    dolly: permette di allontanarsi o avvicinarsi rispetto al punto in cui si sta guardando
+                                </li>
+                                <li>
+                                    align: permette il riallineamento della telecamera
+                                </li>
+                                <li>
+                                    getViewMatrix: restituisce la viewMatrix
+                                </li>
+                                <li>
+                                    getOriginalPosition: restituisce la posizione predefinita inizialmente della telemcamera
+                                </li>
+                                <li>
+                                    getPosition: restituisce la posizione della telecamera
+                                </li>
+                            </ul>
+                            
+                        </p>
+                    </div>
+                </div>
             </div>
         </div>
     </body>

@@ -9,7 +9,7 @@ class Canvas {
 
         // enabling depth testing
         this.gl.enable(this.gl.DEPTH_TEST);
-        this.gl.depthFunc(this.gl.LESS);
+        // this.gl.depthFunc(this.gl.LESS); // normalmente settata di default
 
         // enabling alpha blending
         this.gl.enable(this.gl.BLEND);
@@ -23,7 +23,6 @@ class Canvas {
         this.mesh_list = []; //Array di oggetti mesh
 
         this.gl.viewport(0, 0, this.gl.canvas.width, this.gl.canvas.height);
-        this.gl.enable(this.gl.DEPTH_TEST);
 
         // Compiling vertex and fragment shader
         this.programInfo = webglUtils.createProgramInfo(this.gl, ["3d-vertex-shader", "3d-fragment-shader"]);
