@@ -17,9 +17,6 @@ var frase_9 = "Premi la rotellina del mouse per zoomare";
 
 var istruzioni = new Array(frase_0, frase_1, frase_2, frase_3, frase_4, frase_5, frase_6, frase_7, frase_8, frase_9);
 
-//variabile per caricamento mesh
-var mesh = new Array();
-
 //variabile per la posizione, la normale e le coordinate delle texture
 var positions = [];
 var normals = [];
