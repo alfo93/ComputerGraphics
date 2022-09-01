@@ -260,7 +260,7 @@
                             Alla creazione dell'oggetto canvas, il costruttore crea in prima istanza il contesto webgl, e successivamente imposta il viewport, che specifica la trasformazione di x e y dalle coordinate del dispositivo alle coordinate della finestra. <br>
                             Viene inizializzata una lista di mesh che verrà successivamente riempita ogni qual volta viene istanziato un oggetto Model.<br>
         
-                            Come ultimo passo viene creato il program chiamando la funzione della libreria di WebGl <b>webglUtils.createProgramInfo</b> che prende come parametri il contesto 3D e gli shader. <br>
+                            Come ultimo passo viene creato il program chiamando la funzione della libreria di webGlUtils <b>webglUtils.createProgramInfo</b> che prende come parametri il contesto 3D e gli shader. <br>
                             <br>
                             Per gestire correttamente la trasformazione della scena in base al restringimento della finestra, viene chiamata nel main la funzione <b>resizeCanvasToDisplaySize</b><br>
                             Vengono memorizzate le coordinate width ed height della finestra e si confrontano con quelle del canvas. Se sono diverse, viene chiamata la funzione <b>resizeCanvasToDisplaySize</b> che imposta la dimensione del canvas alla dimensione della finestra. <br>
@@ -300,9 +300,9 @@
                             La funzione <b>LoadMesh</b> prende in input il contesto 3D WebGl e l'array mesh, che al momento della chiamata contiene il path relativo ai file .obj e .mtl. <br>
                             Una volta terminato il caricamento della mesh, il nuovo oggetto viene inserito in una lista presente nell'oggetto canvas che tiene memoria di tutte le mesh create, <br> 
                             e successivamente viene chiamata su quest'ultimo la funzione <b>createBuffer</b><br> 
+                            
                             <h4>createBuffer</h4>
-                            Questa prende in input il contesto 3D WebGl e il program. Si recuperano dallo shader le informazioni sulla posizione, sulla normale e sulle coordinate della texture della mesh <br>
-                            e si creano i rispettivi buffer, effettuandone il bind finale. <br>
+                            Questa prende in input il contesto 3D WebGl e il program. Si creano i buffer per gli attributes position, normal e texcoord <br>
 
                             L'oggetto è stato preparato dunque alla fase di renderizzazione, che avviene solo successivamente alla chiamata della funzione <b>drawModels</b><br>
                             
@@ -319,7 +319,7 @@
                                     Iterare sulla lista delle mesh e chiamare la funzione draw sull'oggetto per la fase di rendering finale.<br>
                                     In questa fase viene fatto un controllo sul parametro enable del pannello di interazione illustrato nei paragrafi precedenti. <br>
                                     Se il parametro è true, allora la funzione draw viene chiamata con dei parametri aggiuntivi che renderanno quindi possibile la gestione dinamica di alcuni di essi.<br>
-                                    Se il parametro è false, la funzione viene chiamta con i soli parametri formali <b>canvas.gl</b> e <b>canvas.programInfo</b>, mentre gli altri assumeranno valori forniti di default. <br>
+                                    Se il parametro è false, la funzione viene chiamata con i soli parametri formali <b>canvas.gl</b> e <b>canvas.programInfo</b>, mentre gli altri assumeranno valori forniti di default. <br>
 
                                 </li>
                             </ul>
@@ -350,7 +350,7 @@
                                     far è il punto più lontano del frustum
                                 </li>
                                 <li>
-                                    light_x, light_y e light_z per il movimento della luce
+                                    light_x, light_y e light_z per la direzione della luce
                                 </li>
                                 <li>
                                     trasparenza è un booleano per l'attivazione/disattivazione della trasparenza
