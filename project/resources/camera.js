@@ -8,7 +8,6 @@ class Camera {
 
     // Ruota la visuale di una telecamera in alto o in basso.
     // Puoi inclinare verso l'alto o verso il basso.
-    // Ruota attorno all'asse u di una telecamera.
     tilt(step){
         let rotation = m4.axisRotation(this.right, (step / 2));
         this.forward = m4.transformPoint(rotation, this.forward)
@@ -19,7 +18,7 @@ class Camera {
     }
 
     // Ruota la visuale della telecamera orizzontalmente rispetto alla posizione dell'occhio della telecamera
-    // È possibile eseguire una panoramica a sinistra o una panoramica a destra. Ruota attorno all'asse v di una telecamera.
+    // È possibile eseguire una panoramica a sinistra o una panoramica a destra.
     pan(step){
         let rotation = m4.axisRotation(this.up, step);
         this.forward = m4.transformPoint(rotation,this.forward);
@@ -30,7 +29,6 @@ class Camera {
     }
 
     // Inclina una telecamera lateralmente mantenendone la posizione e la direzione di visualizzazione.
-    // Questa è una rotazione attorno all'asse n di una telecamera.
     cant(step){
         let rotation = m4.axisRotation(this.forward, (step / 2));
         this.right = m4.transformPoint(rotation, this.right)
@@ -42,7 +40,6 @@ class Camera {
 
     // Sposta la posizione di una telecamera lateralmente (sinistra o destra) mentre la direzione della visuale della telecamera è invariata.
     // Puoi spostarti verso sinistra o verso destra.
-    // Questa è una traslazione lungo l'asse u di una telecamera.    
     truck(dist){
         this.position[0] += + (this.right[0] * dist);
         this.position[1] += + (this.right[1] * dist);
@@ -51,7 +48,6 @@ class Camera {
 
     // Alza o abbassa una telecamera sul suo supporto.
     // Puoi alzare il piedistallo e abbassare il piedistallo.
-    // Questa è una traslazione lungo l'asse v di una telecamera.
     pedestal(dist){
         this.position[0] += (this.up[0] * dist);
         this.position[1] += (this.up[1] * dist);
@@ -60,7 +56,6 @@ class Camera {
 
     // Sposta una telecamera più vicino o più lontano dalla posizione che sta guardando.
     // Puoi entrare e uscire.
-    // Questa è una traslazione lungo l'asse n di una telecamera.
     dolly(dist){
         this.position[0] += (this.forward[0] * dist);
         this.position[1] += (this.forward[1] * dist);

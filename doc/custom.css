@@ -434,3 +434,8 @@ figure {
     flex: 0 0 100%;
     max-width: 100%;
   }
+
+h3 {
+  border: 1px solid black; 
+  text-align: center; 
+}
