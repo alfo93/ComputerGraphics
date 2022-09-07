@@ -74,22 +74,22 @@ function main() {
     define_gui();
 
     //loading mesh objects
-    var finestra = new Model("Finestra", "../project/objFiles/Stanza/Finestra/finestra.obj", "../project/objFiles/Stanza/Finestra/finestra.mtl", [0, 0, 0], false, canvas.gl);
-    var landscape = new Model("Landscape", "../project/objFiles/Stanza/Finestra/Landscape/landscape.obj", "../project/objFiles/Finestra/Landscape/landscape.mtl", [0, 0, 0], false, canvas.gl);
-    var maniglia = new Model("Maniglia", "../project/objFiles/Stanza/Finestra/Maniglia/maniglia.obj", "../project/objFiles/Stanza/Finestra/Maniglia/maniglia.mtl", [0, 0, 0], false, canvas.gl);
-    var dipinto = new Model("Dipinto", "../project/objFiles/Dipinto/dipinto.obj", "../project/objFiles/Dipinto/dipinto.mtl", [0, 0, 0], false, canvas.gl);
-    var dipinto = new Model("Dipinto", "../project/objFiles/Dipinto/dipinto2.obj", "../project/objFiles/Dipinto/dipinto2.mtl", [0, 0, 0], false, canvas.gl);
-    var pavimento = new Model("Pavimento", "../project/objFiles/Stanza/Pavimento/pavimento.obj", "../project/objFiles/Stanza/Pavimento/pavimento.mtl", [0, 0, 0], false, canvas.gl);
-    var wall = new Model("Wall", "../project/objFiles/Stanza/Mura/wall.obj", "../project/objFiles/Stanza/Mura/wall.mtl", [0, 0, 0], false, canvas.gl);
-    var tavolo = new Model("TavoloWall", "../project/objFiles/Stanza/Tavolo/tavolo.obj", "../project/objFiles/Stanza/Tavolo/tavolo.mtl", [0, 0, 0], false, canvas.gl);
-    var ring = new Model("Ring", "../project/objFiles/Ring/ring.obj", "../project/objFiles/Ring/ring.mtl", [0, 0, 0], false, canvas.gl);
-    var trex = new Model("Trex", "../project/objFiles/Trex/trex.obj", "../project/objFiles/Trex/trex.mtl", [0, 0, 0], false, canvas.gl);
-    var suzanne = new Model("Suzanne", "../project/objFiles/Suzanne/suzanne.obj", "../project/objFiles/Suzanne/suzanne.mtl", [0, 0, 0], false, canvas.gl);
-    var cornice = new Model("Cornice", "../project/objFiles/Quadro/Cornice/cornice.obj", "../project/objFiles/Quadro/Cornice/cornice.mtl", [0, 0, 0], false, canvas.gl);
-    var tela = new Model("Tela", "../project/objFiles/Quadro/Tela/tela.obj", "../project/objFiles/Quadro/Tela/tela.mtl", [0, 0, 0], false, canvas.gl);
-    var lampadario = new Model("Lampadario", "../project/objFiles/Lighter/Lampadario/lampadario.obj", "../project/objFiles/Lighter/Lampadario/lampadario.mtl", [0, 0, 0], false, canvas.gl);
-    var lampada = new Model("Lampada", "../project/objFiles/Lighter/Lampada/lampada.obj", "../project/objFiles/Lighter/Lampada/lampada.mtl", [0, 0, 0], false, canvas.gl);
-    var vetro = new Model("Vetro", "../project/objFiles/Stanza/Finestra/Vetro/vetro.obj", "../project/objFiles/Stanza/Finestra/Vetro/vetro.mtl", [0, 0, 0], false, canvas.gl);
+    var finestra = new Model("Finestra", "./objFiles/Stanza/Finestra/finestra.obj", "./objFiles/Stanza/Finestra/finestra.mtl", [0, 0, 0], false, canvas.gl);
+    var landscape = new Model("Landscape", "./objFiles/Stanza/Finestra/Landscape/landscape.obj", "./objFiles/Finestra/Landscape/landscape.mtl", [0, 0, 0], false, canvas.gl);
+    var maniglia = new Model("Maniglia", "./objFiles/Stanza/Finestra/Maniglia/maniglia.obj", "./objFiles/Stanza/Finestra/Maniglia/maniglia.mtl", [0, 0, 0], false, canvas.gl);
+    var dipinto = new Model("Dipinto", "./objFiles/Dipinto/dipinto.obj", "./objFiles/Dipinto/dipinto.mtl", [0, 0, 0], false, canvas.gl);
+    var dipinto = new Model("Dipinto", "./objFiles/Dipinto/dipinto2.obj", "./objFiles/Dipinto/dipinto2.mtl", [0, 0, 0], false, canvas.gl);
+    var pavimento = new Model("Pavimento", "./objFiles/Stanza/Pavimento/pavimento.obj", "./objFiles/Stanza/Pavimento/pavimento.mtl", [0, 0, 0], false, canvas.gl);
+    var wall = new Model("Wall", "./objFiles/Stanza/Mura/wall.obj", "./objFiles/Stanza/Mura/wall.mtl", [0, 0, 0], false, canvas.gl);
+    var tavolo = new Model("TavoloWall", "./objFiles/Stanza/Tavolo/tavolo.obj", "./objFiles/Stanza/Tavolo/tavolo.mtl", [0, 0, 0], false, canvas.gl);
+    var ring = new Model("Ring", "./objFiles/Ring/ring.obj", "./objFiles/Ring/ring.mtl", [0, 0, 0], false, canvas.gl);
+    var trex = new Model("Trex", "./objFiles/Trex/trex.obj", "./objFiles/Trex/trex.mtl", [0, 0, 0], false, canvas.gl);
+    var suzanne = new Model("Suzanne", "./objFiles/Suzanne/suzanne.obj", "./objFiles/Suzanne/suzanne.mtl", [0, 0, 0], false, canvas.gl);
+    var cornice = new Model("Cornice", "./objFiles/Quadro/Cornice/cornice.obj", "./objFiles/Quadro/Cornice/cornice.mtl", [0, 0, 0], false, canvas.gl);
+    var tela = new Model("Tela", "./objFiles/Quadro/Tela/tela.obj", "./objFiles/Quadro/Tela/tela.mtl", [0, 0, 0], false, canvas.gl);
+    var lampadario = new Model("Lampadario", "./objFiles/Lighter/Lampadario/lampadario.obj", "./objFiles/Lighter/Lampadario/lampadario.mtl", [0, 0, 0], false, canvas.gl);
+    var lampada = new Model("Lampada", "./objFiles/Lighter/Lampada/lampada.obj", "./objFiles/Lighter/Lampada/lampada.mtl", [0, 0, 0], false, canvas.gl);
+    var vetro = new Model("Vetro", "./objFiles/Stanza/Finestra/Vetro/vetro.obj", "./objFiles/Stanza/Finestra/Vetro/vetro.mtl", [0, 0, 0], false, canvas.gl);
 
     //create camera and set attributes
     camera = new Camera(position, target, up);
